@@ -1,83 +1,68 @@
+//Botões
 const startBtn = document.querySelector("#start");
 const pauseBtn = document.querySelector("#pause");
 const resumeBtn = document.querySelector("#resume");
 const resetBtn = document.querySelector("#reset");
+// Números da tela
 let minutes = document.querySelector("#minute");
 let seconds = document.querySelector("#second");
 let milliseconds = document.querySelector("#millisecond");
+//Tempos
 let minute = 0;
 let second = 0;
 let millisec = 0;
 let interval;
 let isPause = false;
 
-
-
-function startTimer() {
-
+startBtn.addEventListener("click", function () {
     interval = setInterval(() => {
         if (!isPause) {
-
             millisec += 10
 
             if (millisec === 1000) {
-                second++;
+                second++
                 millisec = 0
             }
 
             if (second === 60) {
-                minute++;
+                minute++
                 second = 0
             }
-
             minutes.textContent = formatTime(minute)
             seconds.textContent = formatTime(second)
             milliseconds.textContent = formatMillisecod(millisec)
-        }
 
-    }, 10)
+        }
+    }, 10);
 
     startBtn.style.display = "none"
     pauseBtn.style.display = "block"
+})
 
+const togglePause = () => {
+    isPause = !isPause
+    resumeBtn.style.display = isPause ? "block" : "none"
+    pauseBtn.style.display = isPause ? "none" : "block"
 }
 
-function stopTimer() {
-    isPause = true
-    pauseBtn.style.display = "none"
-    resumeBtn.style.display = "block"
-}
+pauseBtn.addEventListener("click", togglePause)
+resumeBtn.addEventListener("click", togglePause)
 
-function resumeTimer() {
-    isPause = false
-    resumeBtn.style.display = "none"
-    pauseBtn.style.display = "block"
+resetBtn.addEventListener("click", function () {
+    clearInterval(interval)
+    minutes.textContent = "00"
+    seconds.textContent = "00"
+    milliseconds.textContent = "000"
 
-}
-
-
-function resetTimer() {
-    clearInterval(interval);
-
-    minute = 0;
-    second = 0;
-    millisec = 0;
-
-    minutes.textContent = "00";
-    seconds.textContent = "00";
-    milliseconds.textContent = "000";
+    minute = 0
+    second = 0
+    millisec = 0
 
     startBtn.style.display = "block"
     pauseBtn.style.display = "none"
     resumeBtn.style.display = "none"
 
-}
-
-startBtn.addEventListener('click', startTimer)
-pauseBtn.addEventListener('click', stopTimer)
-resumeBtn.addEventListener('click', resumeTimer)
-resetBtn.addEventListener('click', resetTimer)
-
+})
 
 function formatTime(time) {
     return time < 10 ? `0${time}` : time

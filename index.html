@@ -1,39 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-    <link rel="icon" href="./assets/clock-img.png">
+    <link rel="icon" href="./assets/clock.png">
     <link rel="stylesheet" href="./style.css">
-    <title>Clock</title>
+    <title>CRONÔMETRO</title>
 </head>
 
 <body>
     <main>
         <div class="content">
 
-            <header>
-                <h1 id="title">CRONÔMETRO</h1>
-            </header>
+            <h1>CRONÔMETRO</h1>
 
-            <div class="box">
-                <p class="inicial">
-                    <span id="minute">00</span>:<span id="second">00</span>:<span id="millisecond">000</span>
-                </p>
+            <div id="box">
+                <p><span id="minute">00</span>:<span id="second">00</span>:<span id="millisecond">000</span></p>
             </div>
-            <footer>
+
+            <div id="btn">
                 <button class="function" id="start">INICIAR</button>
                 <button class="function" id="pause">PAUSAR</button>
                 <button class="function" id="resume">CONTINUAR</button>
                 <button class="function" id="reset">RESET</button>
-            </footer>
+            </div>
 
         </div>
     </main>
