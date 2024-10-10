@@ -20,7 +20,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: 30px;
 }
 
 h1 {
@@ -29,20 +29,20 @@ h1 {
 }
 
 #box {
+    width: 470px;
+    height: 470px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
     border-radius: 50%;
-    width: 500px;
-    height: 500px;
     background-color: #202235;
 
 }
 
 p {
-    font-size: 75px;
+    font-size: 70px;
     text-align: center;
     color: #F64653;
 }
